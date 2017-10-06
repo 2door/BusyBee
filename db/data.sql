@@ -1,0 +1,10 @@
+ INSERT INTO lists VALUES(NULL,1,"cumparaturi",0,0);
+ INSERT INTO lists VALUES(NULL,2,"orice",0,0);
+
+ INSERT INTO items VALUES(NULL,1,"portocalex2",20160202,0);
+ INSERT INTO items VALUES(NULL,2,"portocalex3",20160202,1);
+ INSERT INTO items VALUES(NULL,1,"portocalex4",20160202,1);
+ INSERT INTO items VALUES(NULL,2,"portocalex10",20160202,0);
+
+ INSERT INTO alarms VALUES(4,20160203);
+
