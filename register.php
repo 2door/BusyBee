@@ -3,6 +3,8 @@
 <head>
 	<title>Registration Page</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="./js/jquery-1.12.1.min.js"></script>
+	<script src="./js/register.js"></script>
 </head>
 
 <body>
@@ -10,10 +12,10 @@
 	
 	<div id="register-content">
 		<h1><img src="BusyBee.png"></h1>
-		<form action="user.php" method="post">
+		<form id="form" action="user.php" method="post">
 			<label>
 				Username:<br>
-				<input type="text" name="name"><br>
+				<input id="username" type="text" name="name"><br>
 			</label>
 			<label>
 				Email:<br>
@@ -21,11 +23,11 @@
 			</label>
 			<label>
 				Password:<br>
-				<input type="password" name="password"><br>
+				<input id="pass" type="password" name="password"><br>
 			</label>
 			<label>
 				Confirm password:<br>
-				<input type="password" name="confirm"><br><br>
+				<input id="confirm" type="password" name="confirm"><br><br>
 				<input id="submit" type="submit" value="Submit">
 			</label>
 		</form>

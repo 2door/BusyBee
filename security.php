@@ -1,6 +1,5 @@
 <?php
 	
-	
      function loggedIn() {
 	//returns true if logged in
 		if(!isset($_SESSION['id'])){ 
@@ -19,4 +18,8 @@
 
 	}
 	
+	function h($string)
+	{
+		echo htmlspecialchars($string, ENT_QUOTES, 'utf-8');
+	}
 ?>

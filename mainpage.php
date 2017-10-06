@@ -11,6 +11,7 @@
 <head>
 <title>Busy Bee</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -19,16 +20,18 @@
 	
 	<div id="content">
 		<h1 class="cont">Lists</h1>
-        <ul>
-        	<li><img src="add.png" class="elem" /></li>
-        </ul>
         <table>
         <?php
             $db = new Database();
-            $lists = $db->query("SELECT * FROM lists WHERE (creator=".$_SESSION['id'].");");
+            $stmt = $db->prepare("SELECT * FROM lists WHERE (creator=:id);"); //Step 2
+            $stmt->bindValue(':id',$_SESSION['id'], SQLITE3_INTEGER); // Step 3
+            $lists = $stmt->execute(); //Step 4
+            //$lists = $db->query("SELECT * FROM lists WHERE (creator=".$_SESSION['id'].");");
             while(($row = $lists->fetchArray())){
                 echo "<tr>
-                        <td class='left'><a href='http://cs139.dcs.warwick.ac.uk/~u1528601/cs139/mylist.php?id=".$row['list_id']."'>".$row['title']."</a></td>
+                        <td class='left'><a href='http://cs139.dcs.warwick.ac.uk/~u1528601/cs139/mylist.php?id=".$row['list_id']."'>";
+                h($row['title']);
+                echo "</a></td>
                         <td class='right'>
                             <img class='elem' src='share.png'/>
                             <img class='elem' src='bin.png'/>

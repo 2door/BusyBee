@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <?php 
 	session_start();
-	session_destroy();
+	if(isset($_SESSION['id'])){
+		session_destroy();
+		header("Location:index.php");
+	}
 ?>
 <html>
 <head>
 	<title>Login Page</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 
 <body>
